@@ -1,0 +1,19 @@
+import phonenumbers
+#Import modules
+#Carrier for sim type, time zone for location 
+from phonenumbers import carrier,geocoder,timezone
+
+#First condition
+#Input must be of string type and country code must be added before phone number.
+number = input('Enter a number with countery code +_ _ : ')
+#We use parse for all detail of phone number
+phone = phonenumbers.parse(number)
+time = timezone.time_zones_for_number(phone,)
+car = carrier.name_for_number(phone,'en') #Carrier for service provider
+reg = geocoder.description_for_number(phone,'eng') #Mobile number registration name
+
+
+print('your phone number is ',number)
+print('This sim located in ',time)
+print(car)
+print(reg)
